@@ -1,0 +1,10 @@
+c:\users\faizan.shafiq\documents\visual studio 2015\Projects\SaloonShop\Data\bin\Debug\Data.dll.config
+c:\users\faizan.shafiq\documents\visual studio 2015\Projects\SaloonShop\Data\bin\Debug\Data.dll
+c:\users\faizan.shafiq\documents\visual studio 2015\Projects\SaloonShop\Data\bin\Debug\Data.pdb
+c:\users\faizan.shafiq\documents\visual studio 2015\Projects\SaloonShop\Data\bin\Debug\EntityFramework.dll
+c:\users\faizan.shafiq\documents\visual studio 2015\Projects\SaloonShop\Data\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\faizan.shafiq\documents\visual studio 2015\Projects\SaloonShop\Data\bin\Debug\EntityFramework.xml
+c:\users\faizan.shafiq\documents\visual studio 2015\Projects\SaloonShop\Data\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\faizan.shafiq\documents\visual studio 2015\Projects\SaloonShop\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+c:\users\faizan.shafiq\documents\visual studio 2015\Projects\SaloonShop\Data\obj\Debug\Data.dll
+c:\users\faizan.shafiq\documents\visual studio 2015\Projects\SaloonShop\Data\obj\Debug\Data.pdb

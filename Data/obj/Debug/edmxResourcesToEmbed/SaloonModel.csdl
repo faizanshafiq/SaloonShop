@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SaloonShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isAuthenticated" Type="Boolean" />
+    <Property Name="authenticationkey" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsArchived" Type="Boolean" />
+    <NavigationProperty Name="EmployeeServices" Relationship="SaloonShopModel.FK_EmployeeService_Employee" FromRole="Employee" ToRole="EmployeeService" />
+  </EntityType>
+  <EntityType Name="EmployeeService">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int32" />
+    <Property Name="ServiceId" Type="Int32" />
+    <Property Name="IsArchived" Type="Boolean" />
+    <NavigationProperty Name="Employee" Relationship="SaloonShopModel.FK_EmployeeService_Employee" FromRole="EmployeeService" ToRole="Employee" />
+    <NavigationProperty Name="Service" Relationship="SaloonShopModel.FK_EmployeeService_Service" FromRole="EmployeeService" ToRole="Service" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="MaxAmount" Type="Int32" />
+    <Property Name="IsArchived" Type="Boolean" />
+    <NavigationProperty Name="EmployeeServices" Relationship="SaloonShopModel.FK_EmployeeService_Service" FromRole="Service" ToRole="EmployeeService" />
+  </EntityType>
+  <EntityContainer Name="SaloonShopEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="EmployeeServices" EntityType="Self.EmployeeService" />
+    <EntitySet Name="Services" EntityType="Self.Service" />
+    <AssociationSet Name="FK_EmployeeService_Employee" Association="SaloonShopModel.FK_EmployeeService_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="EmployeeService" EntitySet="EmployeeServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeService_Service" Association="SaloonShopModel.FK_EmployeeService_Service">
+      <End Role="Service" EntitySet="Services" />
+      <End Role="EmployeeService" EntitySet="EmployeeServices" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_EmployeeService_Employee">
+    <End Type="SaloonShopModel.Employee" Role="Employee" Multiplicity="0..1" />
+    <End Type="SaloonShopModel.EmployeeService" Role="EmployeeService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeeService">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeService_Service">
+    <End Type="SaloonShopModel.Service" Role="Service" Multiplicity="0..1" />
+    <End Type="SaloonShopModel.EmployeeService" Role="EmployeeService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeeService">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

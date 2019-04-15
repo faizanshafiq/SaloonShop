@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaloonShop", "SaloonShop\SaloonShop.csproj", "{4421E7CD-EEFA-49F9-A38E-5E440F33AE3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{BB6BED7E-D876-46A4-9A3D-AE0BD709A59A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4421E7CD-EEFA-49F9-A38E-5E440F33AE3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4421E7CD-EEFA-49F9-A38E-5E440F33AE3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4421E7CD-EEFA-49F9-A38E-5E440F33AE3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4421E7CD-EEFA-49F9-A38E-5E440F33AE3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB6BED7E-D876-46A4-9A3D-AE0BD709A59A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB6BED7E-D876-46A4-9A3D-AE0BD709A59A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB6BED7E-D876-46A4-9A3D-AE0BD709A59A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB6BED7E-D876-46A4-9A3D-AE0BD709A59A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
