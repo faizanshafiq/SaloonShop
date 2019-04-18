@@ -95,7 +95,7 @@ namespace SaloonShop.Controllers
             }
         }
 
-        [Route("api/ShowAllEmployees/{Page}/{PageItems}")]
+        [Route("api/ShowAllEmployees/{PageIndex}/{PageItems}")]
         [AcceptVerbs("GET")]
         public IHttpActionResult ShowAllEmployees(int PageIndex,int PageItems)
         {
@@ -109,22 +109,6 @@ namespace SaloonShop.Controllers
             catch (Exception)
             {
                     
-                throw;
-            }
-        }
-
-        [Route("api/ShowAllEmployees1/{arg1}/{arg2}")]
-        [AcceptVerbs("GET")]
-        public IHttpActionResult ShowAllEmployees1(string arg1, string args2)
-        {
-            try
-            {
-                var emps = Saloon.Employees.Select(x => new { x.Id, x.FirstName, x.ContactNumber, x.isAuthenticated, x.LastName, x.Password, x.UserName, x.authenticationkey }).ToList();
-                return Json(emps);
-            }
-            catch (Exception)
-            {
-
                 throw;
             }
         }
