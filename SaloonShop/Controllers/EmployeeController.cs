@@ -49,16 +49,12 @@ namespace SaloonShop.Controllers
                     }
                     else
                     {
-                        var employee = Saloon.Employees.Where(x => x.Id == emp.Id);
-                        foreach (var item in employee)
-                        {
-                            item.Id = emp.Id;
-                            item.IsArchived = emp.IsArchived;
-                            item.isAuthenticated = emp.isAuthenticated;
-                            item.LastName = emp.LastName;
-                            item.Password = emp.Password;
-                            item.UserName = emp.UserName;
-                        }
+                        var employee = Saloon.Employees.Where(x => x.Id == emp.Id).FirstOrDefault();
+                        employee.IsArchived = emp.IsArchived;
+                        employee.isAuthenticated = emp.isAuthenticated;
+                        employee.LastName = emp.LastName;
+                        employee.Password = emp.Password;
+                        employee.UserName = emp.UserName;
                         Saloon.SaveChanges();
                         return Ok("Employee Updated");
                     }
