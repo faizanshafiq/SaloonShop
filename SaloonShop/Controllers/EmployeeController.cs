@@ -49,8 +49,16 @@ namespace SaloonShop.Controllers
                     }
                     else
                     {
-                        Saloon.Employees.Remove(Saloon.Employees.FirstOrDefault(x => x.Id==emp.Id));
-                        Saloon.Employees.Add(emp);
+                        var employee = Saloon.Employees.Where(x => x.Id == emp.Id);
+                        foreach (var item in employee)
+                        {
+                            item.Id = emp.Id;
+                            item.IsArchived = emp.IsArchived;
+                            item.isAuthenticated = emp.isAuthenticated;
+                            item.LastName = emp.LastName;
+                            item.Password = emp.Password;
+                            item.UserName = emp.UserName;
+                        }
                         Saloon.SaveChanges();
                         return Ok("Employee Updated");
                     }
